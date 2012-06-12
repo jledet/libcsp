@@ -85,6 +85,8 @@ extern "C" {
 
 #define CAN_CLEAR_STATUS_MOB() 	do {CANSTMOB=0x00;} while (0)
 
+#define CAN_CLEAR_BOFF()	do {CANGIT=(1 << BOFFIT);} while (0);
+
 #define CAN_CLEAR_INT_MOB() 	do {CANSTMOB = (CANSTMOB & ~(1 << RXOK));} while (0)
 #define CAN_CLEAR_MOB()			do {uint8_t volatile *__i_; \
 									for (__i_=&CANSTMOB; __i_<&CANSTML; __i_++) { \
